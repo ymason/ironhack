@@ -2,7 +2,7 @@ require_relative('lib/shopping_cart')
 require_relative('lib/item')
 require_relative('lib/fruit')
 require_relative('lib/houseware')
--
+
 # Application
 # Store Menu
 	banana = Fruit.new("Banana", 10)
