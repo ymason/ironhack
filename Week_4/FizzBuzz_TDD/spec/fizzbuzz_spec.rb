@@ -4,23 +4,52 @@ require "spec_helper"
 describe FizzBuzz do 
 
 	before :each do
-		@game = FizzBuzz.new
+		@buzzer = FizzBuzz.new
 	end
 
-	describe "#fizz" do
-		it "removes 3 every time and replaces with fizz" do
-      		expect(@game.fizzbuzz(3)).to eq("fizz")
+	describe "#fizz?" do
+		it "should return true if number is divisible by 3" do
+      		expect(@buzzer.fizz?(6)).to eq(true)
 		end
+
+	    it "should return false if number is not divisible by 3" do
+	    	expect(@buzzer.fizz?(7)).to eq(false)
+	    end
+	end
+
+    describe "#buzz?" do
+		it "should return true if number is divisible by 5" do
+      		expect(@buzzer.buzz?(10)).to eq(true)
+      	end
+
+		it "should return false if number is not divisible by 5" do
+      		expect(@buzzer.buzz?(11)).to eq(false)
+      	end
     end
 
-    describe "#buzz" do
-		it "removes 5 every time and replaces with buzz" do
-      		expect(@game.fizzbuzz(5)).to eq("buzz")
+    describe "#fizzbuzz?" do
+		it "should return true if number is divisible by 15" do
+      		expect(@buzzer.fizz_buzz?(30)).to eq(true)
+      	end
+
+    	it "should return false if number is not divisible by 15" do
+      		expect(@buzzer.fizz_buzz?(32)).to eq(false)
       	end
     end
-    describe "#fizzbuzz" do
-		it "removes 15 every time and replaces with fizzbuzz" do
-      		expect(@game.fizzbuzz(15)).to eq("fizzbuzz")
-      	end
+
+    describe "#fizz_printer" do
+    	it "should count from 1 to a number, and return a new array with that number of elements" do
+    		expect(@buzzer.fizz_printer(100).length).to eq(100)
+    	end
+
+    	it "should replace 3 with fizz in array" do
+    		expect(@buzzer.fizz_printer(100)[2]).to eq("Fizz")
+    	end
+    	it "should replace 5 with buzz in array" do
+    		expect(@buzzer.fizz_printer(100)[4]).to eq("Buzz")
+    	end
+    	it "should replace 15 with fizzbuzz in array" do
+    		expect(@buzzer.fizz_printer(100)[14]).to eq("FizzBuzz")
+    	end
     end
 end

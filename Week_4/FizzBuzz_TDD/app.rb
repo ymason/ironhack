@@ -4,6 +4,6 @@
 
 require_relative('lib/fizzbuzz')
 
-game = FizzBuzz.new
+fizzbuzz = FizzBuzz.new
 
-puts game.fizzbuzz
+puts fizzbuzz.fizz_printer(100)
