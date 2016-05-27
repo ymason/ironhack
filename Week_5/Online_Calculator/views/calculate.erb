@@ -1,0 +1,9 @@
+<h1>The <%= @operation %> of <%= @first %> and <%= @second %> is <%= @calculate %>
+</h1>
+
+<h2>Save</h2>
+<form action="/save" method="POST">
+  <input type="hidden" name="calculate" value="<%= @calculate %>">
+
+  <button type="submit">Save</button>
+</form>

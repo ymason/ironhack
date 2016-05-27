@@ -1,0 +1,70 @@
+<!-- views/subtract.erb -->
+<!doctype html>
+<html>
+<head>
+  <title>Online Calculator</title>
+</head>
+<body>
+
+<h1>Online Calculator</h1>
+
+<p>
+</p>
+
+<form action="/calculate" method="POST">
+
+  <input type="number" name="first_number" value= "<%=@result%>" placeholder="1st number"> 
+  <input type="number" name="second_number" placeholder="2nd number">
+
+<button type="submit" name="operation" value="add">ADD</button>
+<button type="submit" name="operation" value="subtract">SUBTRACT</button>
+<button type="submit" name="operation" value="multiply">MULTIPLY</button>
+<button type="submit" name="operation" value="divide">DIVIDE</button>
+
+</body>
+</html>
+
+<!-- <h2>Add</h2>
+
+<form action="/calculate_add" method="POST">
+  <input type="number" name="first_number" placeholder="1st number"> +
+  <input type="number" name="second_number" placeholder="2nd number">
+
+  <button type="submit">Calculate</button>
+</form>
+
+<p>
+</p>
+
+<h2>Subtract</h2>
+
+<form action="/calculate_subtract" method="POST">
+  <input type="number" name="first_number" placeholder="1st number"> -
+  <input type="number" name="second_number" placeholder="2nd number">
+
+  <button type="submit">Calculate</button>
+</form>
+
+<p>
+</p>
+
+<h2>Divide</h2>
+
+<form action="/calculate_divide" method="POST">
+  <input type="number" name="first_number" placeholder="1st number"> /
+  <input type="number" name="second_number" placeholder="2nd number">
+
+  <button type="submit">Calculate</button>
+</form>
+
+<p>
+</p>
+
+<h2>Multiply</h2>
+
+<form action="/calculate_multiply" method="POST">
+  <input type="number" name="first_number" placeholder="1st number"> *
+  <input type="number" name="second_number" placeholder="2nd number">
+
+  <button type="submit">Calculate</button>
+</form> -->

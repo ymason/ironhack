@@ -1,0 +1,11 @@
+<!-- <ul>
+	<li>Sausage</li>
+	<li>Pepperoni</li>
+	<li>Peppers</li>
+</ul> -->
+
+<ul>
+<% @ingredients.each do | ingr | %>
+	<li><%= ingr %></li>
+	<% end %>
+</ul>
