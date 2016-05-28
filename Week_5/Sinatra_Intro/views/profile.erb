@@ -1,3 +1,6 @@
-<h2>This is the profile for:
-<%= @username %>
+<h1>Profile</h1>
+<h2>This is the profile for <%= @username %>
 </h2>
+
+<form action="/logout" method="POST">
+<button type="submit" name="operation" value="logout">LOGOUT</button>

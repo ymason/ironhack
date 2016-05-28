@@ -1,6 +1,7 @@
 # server.rb
 require "sinatra"
-require_relative('lib/Calculator')
+require_relative('lib/Calcbunulator')
+require "sinatra/reloader" if development?
 
 calculator = Calculator.new
 

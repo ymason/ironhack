@@ -25,6 +25,7 @@ class TodoList
     	task = @tasks.find do | task |
     		task.id == id
     	end
+        task
     end
 
     def sort_by_created(direction)
