@@ -1,0 +1,78 @@
+.page {
+	padding-top: 20px;
+	padding-left: 20px;
+	background-color: #F5F5F5;
+	font-family: 'Roboto', 'Helvetica Neue', Helvetica, Arial, sans-serif;
+}
+
+.whale {
+	background-color: #F5F5F5;
+	padding-bottom: 10px;
+	padding-top: 10px;
+}
+
+.whitespace {
+	padding-top: 10px;
+	background-color: #FFFFFF;
+	width: 90%;
+	padding-left: 30px
+}
+
+.icon {
+	width:40px;
+    height: 40px;
+}
+
+.saver {
+	font-size: 120%;
+	padding-bottom: 20px;
+}
+
+.coin {
+	padding-bottom: 20px;
+}
+
+.bitcoin {
+	width:20px;
+    height: auto;
+}
+
+.coin-text {
+	color: #F3AB4C;
+	font-weight: bold;
+}
+
+.now {
+	color: #F64F5A;
+	font-weight: bold;
+}
+
+.html, .css {
+	color: #aaa;
+}
+
+.dropdown {
+	color: #333;
+	font-size: 150%;
+}
+
+.cage {
+	width: 35px;
+	height: 35px;
+}
+
+.round {
+	font-color: #2889D8;
+}
+
+.comment {
+	padding-bottom: 10px;
+}
+
+.likes {
+	padding-bottom: 5px;
+}
+
+.view-comments {
+	padding-bottom: 20px;
+}

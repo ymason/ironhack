@@ -1,0 +1,41 @@
+body {
+    			background-image: url('photo-1465257474426-bd133d4db35e.jpeg');
+    			background-size: cover;
+    			background-repeat: no-repeat;
+    			color: red;
+		}
+.container {
+    margin: 0 40px;
+}
+.row {
+    margin-left: -3%;
+}
+[class*="span"] {
+display: inline;
+float: left;
+margin-left: 3%;
+}
+.span-one-third {
+    width: 100%;
+}
+
+
+
+@media screen and (min-width: 480px) {
+	body {
+		background-image:url('photo-1465257474426-bd133d4db35e.jpeg');
+	}
+	.span-one-third {
+    width: 45%;
+}
+}
+
+@media screen and (min-width: 1024px) {
+	body {
+		background-image:url('photo-1465257474426-bd133d4db35e.jpeg');
+	}
+	.span-one-third {
+    width: 30%;
+	}
+
+}

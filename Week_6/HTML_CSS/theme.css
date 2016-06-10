@@ -1,0 +1,82 @@
+/*selector {
+
+property: value;
+
+}*/
+
+body {
+	font-family: Georgia, Cambria, "Times New Roman", Times, serif;
+}
+
+h1, h2, h3 {
+	font-family: "Calibre", "Helvetica Neue", "Helvetica", "Arial", sans-serif;
+}
+
+.title {
+	font-size: 40px;
+	font-weight: bold;
+	color: #202020;
+}
+
+.subtitle {
+	font-size: 32px;
+	font-weight: bold;
+	color: #202020;
+}
+
+.date {
+	font-size: 18px;
+	color: 	#404040;
+}
+
+.author {
+	font-size: 20px;
+	font-weight: bold;
+	color: #c9353a;
+}
+
+.blog {
+	font-size: 20px;
+	color: 	#404040;
+}
+
+.intro {
+	font-size: 20px;
+	color: 	#404040;
+}
+
+.image {
+	text-align: center;
+}
+
+.image img { /* resize images */
+
+    width: 20%;
+    height: auto;
+}
+
+.bullets ul {
+	list-style-type: none;
+}
+
+.quote {
+    font-size: 20px;
+    background: #ddf;
+    font-weight: bold;
+    padding: 13px;
+    margin: 0 13px 13px 0;
+}
+
+blockquote {
+    margin: 0; /* gets rid of the default blockquote margin */
+}
+
+/*.by {
+	color: red;
+	width: 100px;
+}
+
+body {
+	color: silver;
+	width: 1000px;
+}*/

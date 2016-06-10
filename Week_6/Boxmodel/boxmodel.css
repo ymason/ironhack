@@ -1,0 +1,17 @@
+.box {
+	height: 150px;
+	background: #654678;
+	width: 100px;
+	padding: 50px;
+	margin: 50px;
+	box-shadow: 20px 20px 2px 1px rgba(0, 0, 0, 0.2);
+}
+
+.box2 {
+	height: 50px;
+	background: black;
+	width: 25px;
+	padding: 20px;
+	margin: 20px;
+	box-shadow: 10px 10px 2px 1px rgba(0, 0, 0, 0.2);
+}

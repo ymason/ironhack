@@ -1,0 +1,48 @@
+
+body:after {
+	position: fixed;
+	bottom: 0;
+	left: 0;
+	width: 100%;
+	font-weight: bold;
+	font-size: 300%;
+	text-align: center;
+	color: white;
+	content: "less than 320";
+	background-color: #320;
+}
+
+@media screen and (min-width: 320px) {
+	body:after {
+		content: "320 - 480px width";
+		background-color: #480;
+	}
+}
+
+@media screen and (min-width: 480px) {
+	body:after {
+		content: "480 - 768px width";
+		background-color: #768;
+	}
+}
+
+@media screen and (min-width: 768px) {
+	body:after {
+		content: "768 - 1024px width";
+		background-color: #124;
+	}
+}
+
+@media screen and (min-width: 1024px) {
+	body:after {
+		content: "1024 - 1200px width";
+		background-color: #333;
+	}
+}
+
+@media screen and (min-width: 1200px) {
+	body:after {
+		content: "1200px width or greater";
+		background-color: #000;
+	}
+}

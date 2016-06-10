@@ -27,38 +27,38 @@ todo_list.add_task(task3)
 # end
 
 get "/tasks" do #Displays all of the tasks
-	@todo_list = todo_list.tasks
-	erb :tasks_index
+  @todo_list = todo_list.tasks
+  erb :tasks_index
 end
 
 get "/new_task" do #Displays a form, which posts to /create_task
-	erb :new_task
+  erb :new_task
 end
 
 post "/create_task" do # Create a new task
-	@task = Task.new(params[:task])
-	todo_list.add_task(@task) # Add it to the todo_list (with the todo_list.add_task method)
-	todo_list.save # Save the todo_list (with the todo_list.save method)
- 	redirect to("/tasks") # Redirect the user back to the /tasks route
+  @task = Task.new(params[:task])
+  todo_list.add_task(@task) # Add it to the todo_list (with the todo_list.add_task method)
+  todo_list.save # Save the todo_list (with the todo_list.save method)
+  redirect to("/tasks") # Redirect the user back to the /tasks route
 end
 
 post "/complete_task/:id" do
-	@find_task = todo_list.find_task_by_id((params[:complete]).to_i) # Find a task out of your todo_list based on it's id.
-	@find_task.complete! # Then, we should mark the task as complete
-	todo_list.save # Save the todo list
-	redirect to("/tasks")
+  @find_task = todo_list.find_task_by_id((params[:complete]).to_i) # Find a task out of your todo_list based on it's id.
+  @find_task.complete! # Then, we should mark the task as complete
+  todo_list.save # Save the todo list
+  redirect to("/tasks")
 end
 
 post "/delete_task" do
-	todo_list.delete_task((params[:delete]).to_i) # Deletes one specific task from the todolist
-	todo_list.save # Save the todo list
-	redirect to("/tasks")
+  todo_list.delete_task((params[:delete]).to_i) # Deletes one specific task from the todolist
+  todo_list.save # Save the todo list
+  redirect to("/tasks")
 end
 
-# <a href="/complete_task/<%= task.id %>"> Complete</a> 
- # <a href="/delete_task">Delete Task</a> 
+# <a href="/complete_task/<%= task.id %>"> Complete</a>
+# <a href="/delete_task">Delete Task</a>
 
-# Route: '/delete_task/'' (POST) 
+# Route: '/delete_task/'' (POST)
 # ERB: None
 # What does it do?:
 
