@@ -1,0 +1,28 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta name="viewport" content="width=device-width, initial-scale=1">
+	<link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.5/css/bootstrap.min.css">
+	<link rel="stylesheet" href="../front_end.css">
+	<link rel="stylesheet" href="../../normalize.css">
+	<meta charset="UTF-8">
+	<meta charset="UTF-8">
+	<title>Movie Trivia</title>
+</head>
+<body>
+<h1><%=@random_question%></h1>
+<br>
+<br>
+<% @filter_movies.each do | movie | %>
+	<% if movie.year == @correct_movie.year %>
+		<img src="<%=movie.poster%>" onClick="alert('yay'); location.href = '/search'" width="100px">
+	<% else %>
+		<img src="<%=movie.poster%>" onClick="alert('nay')" width="100px">
+	<% end %>
+<% end %>
+<br>
+<br>
+<h2><a href="/">Click here to try a new search term.</a>
+	
+</body>
+</html>

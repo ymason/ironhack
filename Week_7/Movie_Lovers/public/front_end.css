@@ -1,0 +1,87 @@
+.page {
+	background-color: #E9E9E9;
+	padding-bottom: 150px;
+	padding-left: 150px;
+	padding-right: 150px;
+	padding-top: 50px;
+
+}
+
+.section {
+	background-color: #FFF;
+	font-family: 'Helvetica Neue', Helvetica, Arial, sans-serif;
+
+}
+
+.header {
+	float: right;
+    margin-right: 98px; /*set margin this way in your custom styesheet*/
+    padding-bottom: 20px;
+}
+
+.section-header {
+	outline: #000 solid thin;
+	background-color: #FFF;
+}
+.search {
+	padding-bottom: 100px;
+}
+
+.row-centered {
+    text-align:center;
+}
+.col-centered {
+    display:inline-block;
+    float:none;
+    /* reset the text-align */
+    text-align:center;
+    /* inline-block space fix */
+    margin-right:-4px;
+}
+
+.footer {
+	padding-top: 40px;
+	padding-bottom: 20px;
+}
+
+.section.footer {
+	outline: #000 solid thin;
+	background-color: #FFF;
+}
+
+.navbar-brand {
+	height: 150px;
+	width: auto;
+}
+
+/*.navbar-nav > li {
+  padding-right:75px;
+}*/
+
+.social {
+	width: 120px;
+	height: auto;
+}
+
+.footer img {
+  width:70%;
+  height:auto;
+  display: inline-block;
+}
+
+.footer-link {
+	padding-top: 20px;
+}
+
+.header-link {
+  padding-top: 30px;
+  padding-left: 25px;
+  /*border-right: 1px solid black;*/
+  padding-right:20px
+}
+
+.thumb {
+	padding-left: 25px;
+	width: 30px;
+	height: 30px;
+}
