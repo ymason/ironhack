@@ -13,12 +13,14 @@ end
 get "/search" do
 	@search = params[:search]
 
-	if session[:search] != nil
-		@movies = MovieSearch.new(session[:search])
-	else
-		@movies = MovieSearch.new(@search)
-		session[:search] = @search
-	end
+	# if session[:search] != nil
+	# 	@movies = MovieSearch.new(session[:search])
+	# else
+	# 	@movies = MovieSearch.new(@search)
+	# 	session[:search] = @search
+	# end
+
+	@movies = MovieSearch.new(@search)
 
 	@filter_movies = @movies.filter
 
