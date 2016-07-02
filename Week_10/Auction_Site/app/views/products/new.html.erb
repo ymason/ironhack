@@ -1,0 +1,23 @@
+<% if @product.errors.any? %>
+	<ul>
+	<% @product.errors.full_messages.each do |error_msg| %>
+		<li> <%= error_msg %> </li>
+		<% end %>
+		</ul>
+	<% end %>
+
+<p>
+<%= form_for [@user, @product] do |f| %>
+<%= f.label :title %>
+<%= f.text_field :title%>
+
+<%= f.label :description %>
+<%= f.text_field :description%>
+
+<%= f.label :deadline %>
+<%= f.date_field :deadline%>
+
+<%= f.submit "Add Product" %>
+<% end %>
+
+<%= link_to("View All Products", user_products_path(@user.id)) %>
