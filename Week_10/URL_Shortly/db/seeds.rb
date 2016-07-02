@@ -5,3 +5,7 @@
 #
 #   cities = City.create([{ name: 'Chicago' }, { name: 'Copenhagen' }])
 #   Mayor.create(name: 'Emanuel', city: cities.first)
+
+Link.create!(original_url: "https://google.com", shortlink: "link1")
+Link.create!(original_url: "https://yahoo.com", shortlink: "link2")
+Link.create!(original_url: "https://github.com", shortlink: "link3")
