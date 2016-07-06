@@ -6,7 +6,13 @@
 		<%= time_entry.hours %>
 		Minutes:
 		<%= time_entry.minutes %>
+		<%= link_to 'Edit Time Entry', edit_project_time_entry_path(@project, time_entry) %>
 	</li>
 
 <% end %>
 </ol>
+
+<%= link_to('View All Projects', projects_path) %>
+<br>
+<br>
+<%= link_to('Add New Time Entry', new_project_time_entry_path) %>
