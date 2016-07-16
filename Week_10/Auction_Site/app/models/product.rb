@@ -1,4 +1,6 @@
 class Product < ActiveRecord::Base
-  belongs_to :user
+	
+	has_many :bids
+  	belongs_to :user
   
 end

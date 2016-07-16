@@ -1,0 +1,6 @@
+All Products:
+<ul>
+<% @all_products.each do |product| %>
+	<li><%= link_to(product.title, user_product_path(product.user_id, product)) %> </li>
+	<% end %>
+	</ul>

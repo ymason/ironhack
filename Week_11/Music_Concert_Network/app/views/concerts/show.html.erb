@@ -1,0 +1,42 @@
+<h1>Welcome to the <%= @concert.artist %> Concert at <%= @concert.venue %> </h1>
+<h4>View Concert Details Below:</h4>
+<ul class="concert">
+	<li>
+	<h5>City:</h5> <%= @concert.city %>
+	</li>
+	<li>
+
+	<h5>Date:</h5> <%= @concert.date %>
+
+	<li>
+	<h5>Price:</h5> $<%= @concert.price %>
+	</li>
+
+	<li>
+	<h5>Description:</h5> <%= @concert.description %>
+	</li>
+	</h6>
+</ul>
+<br>
+<%= link_to("Back to Concerts", concerts_path) %>
+
+<br>
+<br>
+
+Comments:
+<br>
+<div class="comments">
+<% @comments.each do |comment| %>
+	<ul>
+	<%= comment.comment %>
+	</ul>
+<% end %>
+</div>
+<br>
+​
+<%= form_for [@concert, @comment] do |f| %>
+	<%= f.label :comment %>:	
+	<%= f.text_field :comment %>
+	<br><br>
+	<%= f.submit 'Submit Comment' %>
+<% end %>

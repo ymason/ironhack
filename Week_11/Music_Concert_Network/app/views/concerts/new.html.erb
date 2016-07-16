@@ -1,0 +1,68 @@
+<% if @concert.errors.any? %>
+	<ul>
+	<% @concert.errors.full_messages.each do |error_msg| %>
+		<li> <%= error_msg %> </li>
+		<% end %>
+		</ul>
+	<% end %>
+
+<center><h3>Add New Concert</h3></center>
+ <%= form_for @concert, :html => {:class => "form-horizontal center"} do |f| %>
+
+	<div class="form-group">
+		<%= f.label :artist, "Artist:", class: "col-sm-4 control-label" %>
+	<div class="col-sm-4">
+		<%= f.text_field :artist, class: "form-control"%>
+		</div>
+      </div>
+
+	<br>
+
+	<div class="form-group">
+		<%= f.label :venue, "Venue:", class: "col-sm-4 control-label" %>
+	<div class="col-sm-4">
+		<%= f.text_field :venue, class: "form-control"%>
+		</div>
+      </div>
+
+	<br>
+
+	<div class="form-group">
+		<%= f.label :city,  "City:", class: "col-sm-4 control-label" %>
+	<div class="col-sm-4">
+		<%= f.collection_select(:city, City.all, :id, :name, class: "form-control")%>
+</div>
+      </div>
+
+	<br>
+
+	<div class="form-group">
+		<%= f.label :date,  "Date:", class: "col-sm-4 control-label" %>
+	<div class="col-sm-4">
+		<%= f.date_field :date, class: "form-control"%>
+	</div>
+      </div>
+
+      <br>
+
+	<div class="form-group">
+		<%= f.label :price, "Price:", class: "col-sm-4 control-label" %>
+	<div class="col-sm-4">
+	<%= f.number_field :price, class: "form-control"%>
+	</div>
+      </div>
+	<br>
+
+	<div class="form-group">
+		<%= f.label :description, "Description:", class: "col-sm-4 control-label" %>
+	<div class="col-sm-4">
+	<%= f.text_field :description, class: "form-control" %>
+	</div>
+      </div>
+	<br>
+
+<center><%= f.submit "Add Concert", class: "btn btn-default btn-primary" %>
+	<br><br>
+	<%= link_to("Back to Concerts", concerts_path) %>
+</center>
+<% end %>

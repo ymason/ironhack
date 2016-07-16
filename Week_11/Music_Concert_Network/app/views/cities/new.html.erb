@@ -1,0 +1,23 @@
+<% if @city.errors.any? %>
+	<ul>
+	<% @city.errors.full_messages.each do |error_msg| %>
+		<li> <%= error_msg %> </li>
+		<% end %>
+		</ul>
+	<% end %>
+
+<center><h3>Add New City</h3></center>
+ <%= form_for @city, :html => {:class => "form-horizontal center"} do |f| %>
+
+	<div class="form-group">
+		<%= f.label :name, "City Name:", class: "col-sm-4 control-label" %>
+	<div class="col-sm-4">
+		<%= f.text_field :name, class: "form-control"%>
+		</div>
+      </div>
+
+    <center><%= f.submit "Add City", class: "btn btn-default btn-primary" %>
+	<br><br>
+	<%= link_to("Back to Concerts", concerts_path) %>
+</center>
+<% end %>

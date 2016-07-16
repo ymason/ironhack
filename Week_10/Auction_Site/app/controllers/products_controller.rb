@@ -5,6 +5,10 @@ class ProductsController < ApplicationController
 		@product = @user.products.new
 	end
 
+	def all
+		@all_products = Product.all
+	end
+
 	def create
 		@user = User.find params[:user_id]
 
@@ -36,6 +40,11 @@ class ProductsController < ApplicationController
 	def show
 		@user = User.find params[:user_id]
 		@product = @user.products.find_by(id: params[:id])
+
+		@bids = @product.bids.order(amount: :desc)
+		@bid = Bid.new
+		@high_bid = @bids.first
+
 	end
 
 	def index

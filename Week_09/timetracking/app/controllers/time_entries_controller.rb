@@ -6,6 +6,18 @@ class TimeEntriesController < ApplicationController
 		@time_entry = @project.time_entries.find(params[:id])
 	end
 
+	def destroy
+		flash[:success] = "Time Entry Deleted"
+
+		@project = Project.find(params[:project_id])
+
+		@time_entry = @project.time_entries.find(params[:id])
+
+		@time_entry.destroy
+		
+		redirect_to project_time_entries_path(@project)
+	end
+
 	def create
 		#input: params[:project_id] and params[:time_entry]
 		#Find resources needed
@@ -19,7 +31,7 @@ class TimeEntriesController < ApplicationController
 
 		@time_entry = @project.time_entries.new(time_entry_params)
 		if @time_entry.save
-			redirect_to project_time_entries_path(@project)
+			redirect_to project_time_entries_path(@project), notice: "Time entry created successfully"
 		else
 			render 'new'
 		end

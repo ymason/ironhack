@@ -1,7 +1,36 @@
 <h1>Thanks <%= @user.name %> for creating your new product: <%= @product.title %> </h1>  
-<br>
 <h2> Description: <%= @product.description %> </h2>
-<br>
 <h2> Deadline: <%= @product.deadline %> </h2>
 
 <%= link_to("Create New Product", new_user_product_path(@user)) %>
+
+<br>
+<br>
+
+
+<% if Time.now < @product.deadline %>
+
+<% @bids.each do |bid| %>
+	<li>
+		$<%= bid.amount %> - <b>  Bidder</b>
+		<%= bid.user.name %>
+	</li>
+
+	<% end %>
+
+	<%= form_for [@product, @bid] do |f| %>
+		<%= f.label :amount %>
+		<%= f.number_field :amount%>
+		<br>
+		<%= f.label :email %>
+		<%= f.text_field :email %>
+		<br>
+		<br>
+		<%= f.submit "Place Bid" %>
+	<% end %>
+
+<% else %>
+
+	$<%= @high_bid.amount %> - <br>Winning Bidder:</b> <%= @high_bid.user.name %>
+	
+<% end %>
