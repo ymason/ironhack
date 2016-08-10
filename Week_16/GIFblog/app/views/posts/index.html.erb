@@ -1,0 +1,11 @@
+<h1>The Best GIFS Ever:</h1>
+<ul>
+<% @posts.each do |post| %>
+	<li><%= link_to(post.title, post_path(post.id)) %> </li>
+	<% end %>
+	</ul>
+
+<h2><%= link_to "VIEW LOW POSTS", low_posts_path %>
+<h2><%= link_to "SORT BY DATE", sort_date_path %> </h2>
+<h2><%= link_to "SORT BY VOTES", sort_votes_path %> </h2>
+<h2><%= link_to "CREATE NEW POST", new_posts_path %> </h2>
