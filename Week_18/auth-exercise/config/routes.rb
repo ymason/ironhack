@@ -13,4 +13,8 @@ Rails.application.routes.draw do
   get '/profile' => 'users#show'
   get '/users' => 'users#index'
 
+  post '/login' => 'sessions#create'
+  get '/login/' => 'sessions#new'
+  delete '/logout' => 'sessions#destroy'
+
 end
