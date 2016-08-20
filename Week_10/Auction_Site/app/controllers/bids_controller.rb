@@ -12,8 +12,13 @@ class BidsController < ApplicationController
 			product_id: @product.id
 			)
 
-		@bid.save
+		@bids = @product.bids.order(amount: :desc)
+		@high_bid = @bids.first
 
-		redirect_to user_product_path(@user, @product)
+		if @bid.save
+			redirect_to user_product_path(@user, @product)
+		else 
+			render 'products/show'
+		end
 	end
 end

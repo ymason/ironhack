@@ -12,6 +12,9 @@
 <%= f.label :title %>
 <%= f.text_field :title%>
 
+<%= f.label :minimum_bid %>
+<%= f.number_field :minimum_bid%>
+
 <%= f.label :description %>
 <%= f.text_field :description%>
 
@@ -21,4 +24,4 @@
 <%= f.submit "Add Product" %>
 <% end %>
 
-<%= link_to("View All Products", user_products_path(@user.id)) %>
+<%= link_to("View All Products", products_path) %>

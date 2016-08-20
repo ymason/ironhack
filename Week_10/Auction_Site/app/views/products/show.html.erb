@@ -1,5 +1,14 @@
-<h1>Thanks <%= @user.name %> for creating your new product: <%= @product.title %> </h1>  
+<% if @bid.errors.any? %>
+	<ul>
+	<% @bid.errors.full_messages.each do |error_msg| %>
+		<li> <%= error_msg %> </li>
+		<% end %>
+		</ul>
+	<% end %>
+
+<h1>Start the bidding on <%= @product.title %> </h1>  
 <h2> Description: <%= @product.description %> </h2>
+<h2> Minimum Bid: $<%= @product.minimum_bid %> </h2>
 <h2> Deadline: <%= @product.deadline %> </h2>
 
 <%= link_to("Create New Product", new_user_product_path(@user)) %>
