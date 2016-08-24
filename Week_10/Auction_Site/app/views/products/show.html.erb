@@ -16,8 +16,13 @@
 <br>
 <br>
 
+<% if @high_bid == nil %>
 
-<% if Time.now < @product.deadline %>
+	<h1>
+	<font color="red"> No bids, bidding is over!</font>
+	</h1>
+
+<% elsif Date.today < @product.deadline %>
 
 <% @bids.each do |bid| %>
 	<li>
@@ -27,7 +32,7 @@
 
 	<% end %>
 
-	<%= form_for [@product, @bid] do |f| %>
+	<%= form_for [@user, @bid] do |f| %>
 		<%= f.label :amount %>
 		<%= f.number_field :amount%>
 		<br>
@@ -40,6 +45,30 @@
 
 <% else %>
 
-	$<%= @high_bid.amount %> - <br>Winning Bidder:</b> <%= @high_bid.user.name %>
+	$ <%= @high_bid.amount %> - <br>Winning Bidder:</b> <%= @high_bid.user.name %>
 	
+<% end %>
+<br>
+<br>
+
+<% @reviews.each do |review| %>
+	<li>
+		<%= review.description %> - <b>  <%= review.user.name %> </b>
+	</li>
+
+	<% end %>
+
+<% if user_signed_in? %>
+
+	<%= form_for @review do |f| %>
+		<%= f.label :description %>
+		<%= f.text_field :description%>
+
+		<%= f.submit "Leave Review" %>
+
+	<% end %>
+
+<% else %>
+	Please login to leave comments!<br>
+	<%= link_to "Login", new_user_session_path %>
 <% end %>

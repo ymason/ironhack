@@ -44,6 +44,9 @@ class ProductsController < ApplicationController
 		@bid = Bid.new
 		@bids = @product.bids.order(amount: :desc)
 		@high_bid = @bids.first
+		@reviews = @product.reviews.all
+
+		@review = @product.reviews.new
 
 	end
 
