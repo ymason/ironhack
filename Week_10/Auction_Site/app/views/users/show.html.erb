@@ -1,7 +1,54 @@
 <h1>Welcome to the Auction Site, <%= @user.name %> </h1>
-Your Products: 
+
+<h2>Your Products:</h2> 
 <ul><% @user.products.each do | product | %>
-	<li><%= link_to(product.title, product_path(product.id)) %></li>
+	<li><%= link_to(product.title, user_product_path(product.user_id, product.id)) %></li>
 	<% end %>
 </ul>
+
+<h2>Winning Bid:</h2>
+	<ul><% @user.winning_bids.each do | product | %>
+		<li><%= link_to(product.title, user_product_path(product.user_id, product.id)) %></li>
+		<% end %>
+	</ul>
+
+<h2>Your Bids:</h2>
+<ul><% @user.bids.each do | bid | %>
+	<li><%= link_to(bid.amount, user_product_path(bid.user_id, bid.product_id)) %> - <%=bid.product.title%> </li>
+	<% end %>
+</ul>
+
+<% if current_user.id == @user.id %>
+		<h2> Your Rating</h2>
+		<h1><font color="green"><%= @user.average_rating %></font></h1>
+<% else %>
+	<h2><%= @user.name%>'s Average Rating - <font color="green"><%= @user.average_rating %></font></h2>
+		<%= form_for [@user, @rating] do |f| %>
+			<%= f.label :rating %>
+			<%= f.number_field :rating%>
+			<br>
+			<br>
+			<%= f.submit "Rate This User" %>
+		<% end %>
+<% end %>
+
+<h2> Your Reviews</h2>
+<% @user.reviews.each do | review | %>
+	<ul>
+	<li>
+		<b> Product: <%= review.product.title %></b>
+		<br>
+	 	Review: <%= review.description %>
+	 	</li>
+	</ul>
+	<% if current_user %>
+		<%= link_to("Edit", edit_user_product_review_path(review.user.id, review.product.id, review.id)) %>
+		<br>
+		<%= link_to "Delete", user_product_review_path(review.user_id, review.product_id, review.id ),  method: :delete, data: { confirm: 'Are you sure?' } %>
+		<% else %>
+		<% end %>
+	<% end %>
+<br>
+<br>
 <%= link_to("Create A Product", new_user_product_path(@user.id)) %>
+<%= link_to("View All Products", products_path) %>

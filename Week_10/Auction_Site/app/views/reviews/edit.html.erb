@@ -1,0 +1,14 @@
+<% if current_user %>
+<h2> Edit Your Review</h2><br>
+	<%= form_for @review, url: edit_user_product_review_path do |f| %>
+		<%= f.label :description %>
+		<%= f.text_field :description%>
+
+		<%= f.submit "Update Review" %>
+
+	<% end %>
+
+<% else %>
+	<h2>Please login to edit comments!</h2><br>
+	<%= link_to "Login", new_user_session_path %>
+<% end %>

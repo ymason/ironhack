@@ -20,6 +20,10 @@ class UsersController < ApplicationController
 
 	def show
 		@user = User.find_by(id: params[:id])
+
+		@rating = Rating.new
+
+		# show winning bids
 	end
 
 end

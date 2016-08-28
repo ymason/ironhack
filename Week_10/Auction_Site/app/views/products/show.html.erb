@@ -32,7 +32,7 @@
 
 	<% end %>
 
-	<%= form_for [@user, @bid] do |f| %>
+	<%= form_for [@product, @bid] do |f| %>
 		<%= f.label :amount %>
 		<%= f.number_field :amount%>
 		<br>
@@ -54,6 +54,14 @@
 <% @reviews.each do |review| %>
 	<li>
 		<%= review.description %> - <b>  <%= review.user.name %> </b>
+		<br>
+		<% if current_user %>
+		<%= link_to("Edit", edit_user_product_review_path(review.user_id, review.product_id, review.id)) %>
+		<br>
+		<%= link_to "Delete", user_product_review_path(review.user_id, review.product_id, review.id ),  method: :delete, data: { confirm: 'Are you sure?' } %>
+		<% else %>
+
+		<% end %>
 	</li>
 
 	<% end %>

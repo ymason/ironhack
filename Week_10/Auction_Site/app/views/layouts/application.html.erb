@@ -10,6 +10,7 @@
 	<header>
 		<% if user_signed_in? %>
 			Welcome Home, <%= current_user.name %>
+			<%= link_to "Profile", user_path(current_user.id)%>
 			<%= link_to "Logout", destroy_user_session_path, method: :delete %>
 		<% else %>
 			Please sign up or sign!<br>
@@ -19,5 +20,7 @@
 	</header>
 <%= yield %>
 
+<p class="notice"><%= notice %></p>
+<p class="alert"><%= alert %></p> 
 </body>
 </html>

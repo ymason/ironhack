@@ -22,3 +22,5 @@ class BidsController < ApplicationController
 		end
 	end
 end
+
+
